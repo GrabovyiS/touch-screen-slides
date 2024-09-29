@@ -1,0 +1,149 @@
+.hero-slide {
+  display: flex;
+  align-items: center;
+
+  background-image: url("../../assets/bg1.png");
+  background-size: contain;
+  background-position: 0 0;
+
+  .text-container {
+    isolation: isolate;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 96px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  .button-wrapper {
+    margin-left: 64px;
+  }
+
+  .cheeto {
+    position: absolute;
+    top: 72px;
+    left: 0px;
+    width: 128px;
+  }
+
+  .bottom-sponge {
+    position: absolute;
+    width: 68px;
+    bottom: 196px;
+    left: 40px;
+    animation: bottom-sponge 4s linear alternate infinite;
+  }
+
+  .top-sponge {
+    position: absolute;
+    width: 68px;
+    top: 80px;
+    right: 180px;
+    animation: top-sponge 3s linear alternate infinite;
+  }
+
+  .spikey {
+    position: absolute;
+    width: 108px;
+    top: 180px;
+    right: 84px;
+    animation: spikey 6.5s linear alternate infinite;
+  }
+
+  .top-blur {
+    width: 35px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    filter: blur(13px);
+  }
+
+  .bottom-blur {
+    width: 40px;
+    position: absolute;
+    bottom: 60px;
+    left: 350px;
+    filter: blur(8px);
+  }
+
+  .sperm-blur {
+    position: absolute;
+    height: 60px;
+    bottom: 65px;
+    left: -50px;
+    transform: rotate(165deg);
+    filter: blur(6px);
+  }
+
+  .sperm {
+    position: absolute;
+    height: 90px;
+    top: 200px;
+    right: -20px;
+  }
+
+  .big {
+    position: absolute;
+    height: 220px;
+    bottom: -140px;
+    right: 300px;
+    animation: big 4.5s linear infinite alternate;
+  }
+}
+
+@keyframes bottom-sponge {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(10px, 50px);
+  }
+}
+
+@keyframes top-sponge {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-10px, 0) scale(1.15);
+  }
+}
+
+@keyframes spikey {
+  from {
+    transform: translate(0, 0) rotateZ();
+  }
+
+  50% {
+    transform: rotateZ(5deg) translate(-30px, -70px) rotate(30deg);
+  }
+
+  75% {
+    transform: rotateZ(10deg) translate(-30px, -110px) rotate(60deg);
+  }
+
+  to {
+    transform: rotateZ(15deg) translate(-30px, -120px) rotate(90deg);
+  }
+}
+
+@keyframes big {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  55% {
+    transform: translate(-12px, -10px) scale(1.04);
+  }
+
+  to {
+    transform: translate(-20px, -20px) scale(1.08);
+  }
+}

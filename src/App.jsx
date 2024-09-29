@@ -8,7 +8,7 @@ import homeImageUrl from "./assets/home.png";
 
 function App() {
   return (
-    <div className="main-container">
+    <div className="app-container">
       <nav>
         <button className="home-button">
           <img src={homeImageUrl} alt="home, project" />

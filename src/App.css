@@ -2,8 +2,14 @@
   position: relative;
 }
 
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
 nav {
   position: fixed;
+  z-index: 99;
   left: 72px;
   top: 28px;
 
@@ -19,6 +25,7 @@ nav {
 
 footer {
   position: fixed;
+  z-index: 99;
 
   bottom: 16px;
   left: 72px;
@@ -26,4 +33,17 @@ footer {
   img {
     height: 12px;
   }
+}
+
+p.subheading {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 72px;
 }
