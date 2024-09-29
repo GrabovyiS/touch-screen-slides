@@ -1,5 +1,8 @@
 import { useState } from "react";
+
+import HeroSlide from "./components/HeroSlide/HeroSlide";
 import "./App.css";
+
 import logoUrl from "./assets/logo.svg";
 import homeImageUrl from "./assets/home.png";
 
@@ -11,7 +14,9 @@ function App() {
           <img src={homeImageUrl} alt="home, project" />
         </button>
       </nav>
-      <main></main>
+      <main>
+        <HeroSlide></HeroSlide>
+      </main>
       <footer>
         <img src={logoUrl} alt="onpoint logo" />
       </footer>

@@ -4,11 +4,10 @@
 
 nav {
   position: fixed;
-  left: 64px;
+  left: 72px;
   top: 28px;
 
   .home-button {
-    outline: none;
     border: none;
     background-color: transparent;
   }
@@ -22,7 +21,7 @@ footer {
   position: fixed;
 
   bottom: 16px;
-  left: 64px;
+  left: 72px;
 
   img {
     height: 12px;
