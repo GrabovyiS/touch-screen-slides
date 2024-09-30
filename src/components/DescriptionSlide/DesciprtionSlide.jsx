@@ -1,24 +1,69 @@
 import "./DescriptionSlider.css";
 import spermUrl from "../../assets/sperm.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function DescriptionSlide(animated) {
-  let initialCursorY;
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [cursorStart, setCursorStart] = useState(null);
 
-  // the position of the scroller should be stored in the state to
-  const [scrollPercentage, setScrollPercentage] = useState("0");
+  useEffect(() => {
+    const scrollerElement = document.querySelector(".scroller");
+
+    const scrollElement = document.querySelector(".scroll");
+    const minScrollerY = scrollElement.getBoundingClientRect().top - 24;
+    const maxScrollerY =
+      scrollElement.getBoundingClientRect().bottom -
+      scrollerElement.getBoundingClientRect().height;
+
+    const scrollHeight = maxScrollerY - minScrollerY;
+
+    const scrollValue = (scrollHeight * scrollPercentage) / 100;
+
+    scrollerElement.style.transform = `translateY(${scrollValue}px)`;
+
+    const textElement = document.querySelector(".scroll-text");
+    // 0 position of the scroll is 0
+    const textScrollHeight = textElement.scrollHeight;
+    const textHeight = textElement.getBoundingClientRect().height;
+    const maxScrollValue = textScrollHeight - textHeight;
+
+    const scrollHeightValue = (maxScrollValue * scrollPercentage) / 100;
+    textElement.scrollTop = scrollHeightValue;
+    // max position of the scroll is scrollheght - height
+  }, [scrollPercentage]);
 
   const followMouse = (e) => {
-    e.preventDefault();
+    // update scrollpercentage according the new mouse position
+    const scrollElement = document.querySelector(".scroll");
+
+    const minScrollerY = scrollElement.getBoundingClientRect().top - 24;
+    const maxScrollerY = scrollElement.getBoundingClientRect().bottom;
+
+    const scrollHeight = maxScrollerY - minScrollerY;
+
+    let cursorY = e.targetTouches[0].pageY;
+
+    if (cursorY < minScrollerY) {
+      cursorY = minScrollerY;
+    }
+    if (cursorY > maxScrollerY) {
+      cursorY = maxScrollerY;
+    }
+
+    const cursorOffset = cursorY - minScrollerY;
+    const cursorOffsetPercentage = (cursorOffset / scrollHeight) * 100;
+
+    setScrollPercentage(cursorOffsetPercentage);
   };
 
   const startFollowing = (e) => {
-    initialCursorY = e.targetTouches[0].pageY;
+    setCursorStart(e.targetTouches[0].pageY);
     e.target.addEventListener("touchmove", followMouse);
   };
 
   const endFollowing = (e) => {
+    setCursorStart(null);
     e.target.removeEventListener("touchmove", followMouse);
   };
 

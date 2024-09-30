@@ -17,8 +17,8 @@ function App() {
         </button>
       </nav>
       <main>
-        <ProductSlide></ProductSlide>
-        {/* <DescriptionSlide animated={true}></DescriptionSlide> */}
+        {/* <ProductSlide></ProductSlide> */}
+        <DescriptionSlide animated={true}></DescriptionSlide>
       </main>
       <footer>
         <img src={logoUrl} alt="onpoint logo" />
