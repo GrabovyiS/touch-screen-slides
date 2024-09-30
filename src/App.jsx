@@ -8,15 +8,20 @@ import logoUrl from "./assets/logo.svg";
 import homeImageUrl from "./assets/home.png";
 
 function App() {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
   return (
     <div className="app-container">
       <nav>
-        <button className="home-button">
+        <button onClick={() => setCurrentSlideIndex(0)} className="home-button">
           <img src={homeImageUrl} alt="home, project" />
         </button>
       </nav>
       <main>
-        <MainSlider></MainSlider>
+        <MainSlider
+          currentSlideIndex={currentSlideIndex}
+          setCurrentSlideIndex={setCurrentSlideIndex}
+        ></MainSlider>
       </main>
       <footer>
         <img src={logoUrl} alt="onpoint logo" />

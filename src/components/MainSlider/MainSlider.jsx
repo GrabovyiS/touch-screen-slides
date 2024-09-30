@@ -4,8 +4,7 @@ import HeroSlide from "../HeroSlide/HeroSlide";
 import DescriptionSlide from "../DescriptionSlide/DescriptionSlide";
 import ProductSlide from "../ProductSlide/ProductSlide";
 
-function MainSlider({}) {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
   const [touchStart, setTouchStart] = useState(null);
 
   const count = 3;
