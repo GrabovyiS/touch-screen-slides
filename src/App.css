@@ -7,6 +7,11 @@ main {
   width: 100vw;
 }
 
+h1,
+h2 {
+  font-family: "Mukta Vaani", sans-serif;
+}
+
 nav {
   position: fixed;
   z-index: 99;
@@ -36,6 +41,7 @@ footer {
 }
 
 p.subheading {
+  font-family: "DINPro-Regular", sans-serif;
   text-transform: uppercase;
   font-size: 28px;
 }

@@ -18,7 +18,7 @@ function HeroSlide({ onHeroButtonClick }) {
       <div className="content">
         <p className="subheading">Привет,</p>
         <h1>
-          Это <b>НЕ</b> коммерческое задание{" "}
+          Это НЕ коммерческое задание{" "}
           <span className="button-wrapper">
             <CTAButton
               onClick={onHeroButtonClick}
