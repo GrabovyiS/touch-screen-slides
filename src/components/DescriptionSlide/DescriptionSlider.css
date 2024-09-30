@@ -19,6 +19,7 @@
       flex: 1 0 auto;
       display: flex;
       gap: 40px;
+      position: relative;
     }
 
     .scroll {
@@ -51,19 +52,19 @@
       padding: 28px;
       overflow: hidden;
       position: relative;
+    }
 
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to top, white, transparent);
-        border-bottom-left-radius: 32px;
-        border-bottom-right-radius: 32px;
-      }
+    .bottom-white-blur {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 45px;
+      width: calc(100% - 45px);
+      height: 50px;
+      background: linear-gradient(to top, white, transparent);
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
     }
   }
 

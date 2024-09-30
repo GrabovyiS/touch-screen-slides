@@ -8,6 +8,8 @@ function DescriptionSlide(animated) {
   const [clickScrollerOffset, setClickScrollerOffset] = useState(null);
 
   useEffect(() => {
+    // Adjust scroll positions of both the pink scroller
+    // and the connected text container
     const scrollerElement = document.querySelector(".scroller");
 
     const scrollElement = document.querySelector(".scroll");
@@ -23,17 +25,16 @@ function DescriptionSlide(animated) {
     scrollerElement.style.transform = `translateY(${scrollValue}px)`;
 
     const textElement = document.querySelector(".scroll-text");
-    // 0 position of the scroll is 0
     const textScrollHeight = textElement.scrollHeight;
     const textHeight = textElement.getBoundingClientRect().height;
     const maxScrollValue = textScrollHeight - textHeight;
 
     const scrollHeightValue = (maxScrollValue * scrollPercentage) / 100;
     textElement.scrollTop = scrollHeightValue;
-    // max position of the scroll is scrollheght - height
   }, [scrollPercentage]);
 
   useEffect(() => {
+    // Calculate new scroll percentage
     const scrollerElement = document.querySelector(".scroller");
 
     const followMouse = (e) => {
@@ -77,7 +78,7 @@ function DescriptionSlide(animated) {
     setClickScrollerOffset(clickOffset);
   };
 
-  const endFollowing = (e) => {
+  const endFollowing = () => {
     setClickScrollerOffset(null);
   };
 
@@ -120,26 +121,27 @@ function DescriptionSlide(animated) {
           >
             <div className="scroller"></div>
           </div>
+          <div className="bottom-white-blur"></div>
           <p className="scroll-text">
-            <b>Lorem ipsum dolor, sit amet</b> consectetur adipisicing elit.
-            Aliquid reiciendis illum totam architecto aspernatur nisi veritatis
-            fuga numquam sint deserunt! Possimus beatae non ea reprehenderit
-            suscipit, id dolorem quas neque quaerat, consequuntur quos, iste
-            aliquam quis eius tenetur. Voluptatibus quasi delectus quaerat harum
-            quas voluptate eveniet mollitia assumenda quisquam nisi repellat,
-            corrupti qui officiis minus doloremque illo soluta molestias iusto
-            sapiente! Maiores molestias, praesentium iure vitae optio voluptate
-            rem consequuntur, ipsam quaerat, enim earum numquam. Incidunt
-            aliquam quos provident iste et quisquam numquam atque recusandae,
-            placeat nulla cupiditate earum aspernatur ipsum ratione facere
-            dolores quis distinctio. Repellat alias, aliquid consequatur, id
-            magni ullam veritatis, eaque enim doloremque dignissimos excepturi
-            nostrum omnis! Atque ut optio distinctio. Nisi consectetur quia
-            officiis velit ut reprehenderit exercitationem. Eum provident optio
-            debitis asperiores fugit. Minima deserunt repudiandae ipsum expedita
-            enim iusto velit sunt facere quas tenetur, consequuntur amet sequi
-            provident maiores similique ullam fuga atque accusamus eius
-            corrupti, incidunt temporibus nihil! Ad voluptatem, numquam
+            <strong>Lorem ipsum dolor, sit amet</strong> consectetur adipisicing
+            elit. Aliquid reiciendis illum totam architecto aspernatur nisi
+            veritatis fuga numquam sint deserunt! Possimus beatae non ea
+            reprehenderit suscipit, id dolorem quas neque quaerat, consequuntur
+            quos, iste aliquam quis eius tenetur. Voluptatibus quasi delectus
+            quaerat harum quas voluptate eveniet mollitia assumenda quisquam
+            nisi repellat, corrupti qui officiis minus doloremque illo soluta
+            molestias iusto sapiente! Maiores molestias, praesentium iure vitae
+            optio voluptate rem consequuntur, ipsam quaerat, enim earum numquam.
+            Incidunt aliquam quos provident iste et quisquam numquam atque
+            recusandae, placeat nulla cupiditate earum aspernatur ipsum ratione
+            facere dolores quis distinctio. Repellat alias, aliquid consequatur,
+            id magni ullam veritatis, eaque enim doloremque dignissimos
+            excepturi nostrum omnis! Atque ut optio distinctio. Nisi consectetur
+            quia officiis velit ut reprehenderit exercitationem. Eum provident
+            optio debitis asperiores fugit. Minima deserunt repudiandae ipsum
+            expedita enim iusto velit sunt facere quas tenetur, consequuntur
+            amet sequi provident maiores similique ullam fuga atque accusamus
+            eius corrupti, incidunt temporibus nihil! Ad voluptatem, numquam
             perspiciatis aliquid libero distinctio. Officia fuga ducimus earum
             accusamus ullam eum tempora quo deleniti voluptate veritatis
             sapiente vero ut blanditiis maiores eius obcaecati, ea placeat illo

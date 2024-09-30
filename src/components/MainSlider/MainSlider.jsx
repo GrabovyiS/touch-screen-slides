@@ -1,10 +1,10 @@
 import "./MainSlider.css";
-import { Children, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import HeroSlide from "../HeroSlide/HeroSlide";
 import DescriptionSlide from "../DescriptionSlide/DescriptionSlide";
 import ProductSlide from "../ProductSlide/ProductSlide";
 
-function MainSlider({ children }) {
+function MainSlider({}) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
 
