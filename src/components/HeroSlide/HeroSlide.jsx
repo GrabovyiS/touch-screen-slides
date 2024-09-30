@@ -12,13 +12,10 @@ function HeroSlide() {
       <img src={spermUrl} alt="" className="sperm-blur" />
       <img src={spongeUrl} alt="" className="top-blur" />
       <img src={spongeUrl} alt="" className="bottom-blur" />
-      <img src={spermUrl} alt="" className="sperm" />
       <img src={cheetoUrl} alt="" className="cheeto" />
       <img src={spongeUrl} alt="" className="bottom-sponge" />
       <img src={spongeUrl} alt="" className="top-sponge" />
-      <img src={spikeyUrl} alt="" className="spikey" />
-      <img src={bigUrl} alt="" className="big" />
-      <div className="text-container">
+      <div className="content">
         <p className="subheading">Привет,</p>
         <h1>
           Это <b>НЕ</b> коммерческое задание{" "}
@@ -27,6 +24,9 @@ function HeroSlide() {
           </span>
         </h1>
       </div>
+      <img src={spermUrl} alt="" className="sperm" />
+      <img src={spikeyUrl} alt="" className="spikey" />
+      <img src={bigUrl} alt="" className="big" />
     </div>
   );
 }

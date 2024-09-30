@@ -6,13 +6,14 @@
   background-size: contain;
   background-position: 0 0;
 
-  .text-container {
+  .content {
     isolation: isolate;
     margin-bottom: 40px;
   }
 
   h1 {
     text-transform: uppercase;
+    font-weight: normal;
     font-size: 96px;
   }
 
