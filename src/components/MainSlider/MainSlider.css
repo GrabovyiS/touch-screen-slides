@@ -1,0 +1,11 @@
+.main-slider-window {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.main-slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}

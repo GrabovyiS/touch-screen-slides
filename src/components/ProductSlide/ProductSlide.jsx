@@ -35,7 +35,7 @@ function ProductSlide() {
             </p>
           </div>
           <CTAButton
-            onclick={() => console.log("clicked")}
+            onClick={() => {}}
             type={"plus"}
             text="Подробнее"
           ></CTAButton>

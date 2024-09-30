@@ -6,7 +6,7 @@ import spermUrl from "../../assets/sperm.png";
 import bigUrl from "../../assets/big-bakti.png";
 import CTAButton from "../CTAButton/CTAButton";
 
-function HeroSlide() {
+function HeroSlide({ onHeroButtonClick }) {
   return (
     <div className="slide hero-slide">
       <img src={spermUrl} alt="" className="sperm-blur" />
@@ -20,7 +20,11 @@ function HeroSlide() {
         <h1>
           Это <b>НЕ</b> коммерческое задание{" "}
           <span className="button-wrapper">
-            <CTAButton type="arrow" text="Что дальше?"></CTAButton>
+            <CTAButton
+              onClick={onHeroButtonClick}
+              type="arrow"
+              text="Что дальше?"
+            ></CTAButton>
           </span>
         </h1>
       </div>

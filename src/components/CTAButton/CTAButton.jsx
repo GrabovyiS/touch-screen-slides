@@ -2,9 +2,9 @@ import "./CTAButton.css";
 import arrowUrl from "../../assets/right-arrow.svg";
 import plusUrl from "../../assets/plus.svg";
 
-function CTAButton({ type, text, onclick }) {
+function CTAButton({ type, text, onClick }) {
   return (
-    <button onClick={onclick} className="CTAButton">
+    <button onClick={onClick} className="CTAButton">
       {type === "arrow" ? (
         <div className="type-indicator-wrapper">
           <div className="type-indicator">
