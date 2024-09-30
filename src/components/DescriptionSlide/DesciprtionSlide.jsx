@@ -3,7 +3,7 @@ import spermUrl from "../../assets/sperm.png";
 
 import { useState } from "react";
 
-function DescriptionSlider(animated) {
+function DescriptionSlide(animated) {
   let initialCursorY;
 
   // the position of the scroller should be stored in the state to
@@ -127,4 +127,4 @@ function DescriptionSlider(animated) {
   );
 }
 
-export default DescriptionSlider;
+export default DescriptionSlide;

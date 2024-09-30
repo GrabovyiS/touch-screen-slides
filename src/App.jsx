@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import HeroSlide from "./components/HeroSlide/HeroSlide";
-import DescriptionSlider from "./components/DescriptionSlide/DesciprtionSlider";
+import DescriptionSlide from "./components/DescriptionSlide/DesciprtionSlide";
+import ProductSlide from "./components/ProductSlide/ProductSlide";
 import "./App.css";
 
 import logoUrl from "./assets/logo.svg";
@@ -16,7 +17,8 @@ function App() {
         </button>
       </nav>
       <main>
-        <DescriptionSlider animated={true}></DescriptionSlider>
+        <ProductSlide></ProductSlide>
+        {/* <DescriptionSlide animated={true}></DescriptionSlide> */}
       </main>
       <footer>
         <img src={logoUrl} alt="onpoint logo" />
