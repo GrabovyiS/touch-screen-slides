@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import closeIconUrl from "../../assets/close.png";
 import "./Popup.css";
 
@@ -8,7 +8,7 @@ function Popup({ shown, setPopupShown, zIndex }) {
   const popupSlides = [];
 
   popupSlides.push(
-    <div className="popup-slide">
+    <>
       <div className="popup-slide-item">
         <h3>01</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -21,11 +21,11 @@ function Popup({ shown, setPopupShown, zIndex }) {
         <h3>03</h3>
         <p>Faucibus pulvinar elementum integer enim</p>
       </div>
-    </div>
+    </>
   );
 
   popupSlides.push(
-    <div className="popup-slide">
+    <>
       <div className="popup-slide-item">
         <h3>04</h3>
         <p>Mi bibendum neque egestas congue quisque egestas diam</p>
@@ -38,8 +38,18 @@ function Popup({ shown, setPopupShown, zIndex }) {
         <h3>06</h3>
         <p>Venenatis lectus magna fringilla urna</p>
       </div>
-    </div>
+    </>
   );
+
+  const changeIndex = (newIndex) => {
+    const slideContainer = document.querySelector(".popup-slide");
+
+    slideContainer.classList.add("opaque");
+    setTimeout(() => {
+      setCurrentSlideIndex(newIndex);
+      slideContainer.classList.remove("opaque");
+    }, 100);
+  };
 
   return (
     <div className={"overlay " + (shown ? "shown" : "")}>
@@ -56,7 +66,8 @@ function Popup({ shown, setPopupShown, zIndex }) {
           <div className="slider-controls">
             <button
               onClick={() => {
-                setCurrentSlideIndex(Math.max(0, currentSlideIndex - 1));
+                const newIndex = Math.max(0, currentSlideIndex - 1);
+                changeIndex(newIndex);
               }}
               className="left-arrow"
             >
@@ -70,7 +81,7 @@ function Popup({ shown, setPopupShown, zIndex }) {
                 <button
                   key={index}
                   onClick={() => {
-                    setCurrentSlideIndex(index);
+                    changeIndex(index);
                   }}
                   className={
                     "slider-dot" +
@@ -80,11 +91,13 @@ function Popup({ shown, setPopupShown, zIndex }) {
               );
             })}
             <button
-              onClick={() =>
-                setCurrentSlideIndex(
-                  Math.min(popupSlides.length - 1, currentSlideIndex + 1)
-                )
-              }
+              onClick={() => {
+                const newIndex = Math.min(
+                  popupSlides.length - 1,
+                  currentSlideIndex + 1
+                );
+                changeIndex(newIndex);
+              }}
               className="right-arrow"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
