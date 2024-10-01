@@ -15,7 +15,7 @@
   width: 100vw;
   height: 100vh;
   padding: 72px;
-  background-color: rgba(3, 3, 55, 0.712);
+  background-color: rgba(2, 2, 33, 0.444);
 }
 
 .shown {
@@ -32,7 +32,7 @@
   padding-right: 136px;
   padding-top: 36px;
   background-color: white;
-  border-radius: 32px;
+  border-radius: 44px;
 
   .close-popup {
     position: absolute;
@@ -40,8 +40,8 @@
     border: none;
     width: 40px;
     height: 40px;
-    top: 32px;
-    right: 32px;
+    top: 36px;
+    right: 36px;
 
     img {
       width: 100%;
@@ -51,13 +51,14 @@
 
   h2 {
     margin-left: 230px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     font-weight: 300;
   }
 
   .subheading {
     margin-top: 0;
     margin-left: 230px;
+    margin-bottom: 16px;
   }
 
   .popup-slider {
@@ -65,15 +66,15 @@
   }
 
   .popup-slide {
-    font-family: "DINPro-Regular", sans-serif;
-
     h3 {
+      font-family: "DINPro-Bold", sans-serif;
       font-size: 20px;
       color: #8cc9e8;
       margin-bottom: 12px;
     }
 
     p {
+      font-family: "DINPro-Regular", sans-serif;
       font-size: 20px;
       line-height: 1.5;
       margin-bottom: 12px;
@@ -99,7 +100,7 @@
     border: 2px solid black;
     background-color: transparent;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .slider-dot.current {

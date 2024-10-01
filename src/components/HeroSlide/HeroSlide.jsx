@@ -17,16 +17,14 @@ function HeroSlide({ onHeroButtonClick }) {
       <img src={spongeUrl} alt="" className="top-sponge" />
       <div className="content">
         <p className="subheading">Привет,</p>
-        <h1>
-          Это НЕ коммерческое задание{" "}
-          <span className="button-wrapper">
-            <CTAButton
-              onClick={onHeroButtonClick}
-              type="arrow"
-              text="Что дальше?"
-            ></CTAButton>
-          </span>
-        </h1>
+        <h1>Это НЕ коммерческое задание </h1>
+        <div className="button-wrapper">
+          <CTAButton
+            onClick={onHeroButtonClick}
+            type="arrow"
+            text="Что дальше?"
+          ></CTAButton>
+        </div>
       </div>
       <img src={spermUrl} alt="" className="sperm" />
       <img src={spikeyUrl} alt="" className="spikey" />

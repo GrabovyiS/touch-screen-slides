@@ -18,7 +18,7 @@ function ProductSlide() {
       <Popup shown={popupShown} setPopupShown={setPopupShown}></Popup>
       <div className="content">
         <p className="subheading">Ключевое сообщение</p>
-        <h2>BRENDXY</h2>
+        <h2 className="miryad-heading">BRENDXY</h2>
         <div className="cards">
           <div className="card left-card">
             <img

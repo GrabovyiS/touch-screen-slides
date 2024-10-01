@@ -17,7 +17,7 @@
     margin-top: 100px;
     margin-bottom: 20px;
     margin-left: 328px;
-    font-size: 24px;
+    font-size: 26px;
   }
 
   h2 {
@@ -30,6 +30,9 @@
     font-weight: 400;
     position: relative;
     left: -5px;
+    &.miryad-heading {
+      font-family: "Myriad Web Pro", sans-serif;
+    }
   }
 
   .cards {
@@ -44,7 +47,7 @@
     position: relative;
     padding: 52px;
     box-shadow: 0px 0px 25px 3px rgba(5, 3, 70, 0.183);
-    border-radius: 32px;
+    border-radius: 44px;
 
     .icon {
       width: 72px;
