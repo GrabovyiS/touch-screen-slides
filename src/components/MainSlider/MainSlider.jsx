@@ -6,6 +6,7 @@ import ProductSlide from "../ProductSlide/ProductSlide";
 
 function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
   const [touchStart, setTouchStart] = useState(null);
+  const [triggerAnimation, setTriggerAnimation] = useState(Math.random());
 
   const count = 3;
   const widthVW = count * 100;
@@ -24,9 +25,17 @@ function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
 
     if (Math.abs(touchEnd - touchStart) > 100) {
       if (touchStart < touchEnd) {
-        setCurrentSlideIndex(Math.max(0, currentSlideIndex - 1));
+        const newIndex = Math.max(0, currentSlideIndex - 1);
+        if (newIndex === 1) {
+          setTriggerAnimation(Math.random());
+        }
+        setCurrentSlideIndex(newIndex);
       } else {
-        setCurrentSlideIndex(Math.min(count - 1, currentSlideIndex + 1));
+        const newIndex = Math.min(count - 1, currentSlideIndex + 1);
+        if (newIndex === 1) {
+          setTriggerAnimation(Math.random());
+        }
+        setCurrentSlideIndex(newIndex);
       }
     }
   };
@@ -39,9 +48,15 @@ function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
     >
       <div style={{ width: widthVW + "vw" }} className="main-slider">
         <HeroSlide
-          onHeroButtonClick={() => setCurrentSlideIndex(1)}
+          onHeroButtonClick={() => {
+            setTriggerAnimation(Math.random());
+            setCurrentSlideIndex(1);
+          }}
         ></HeroSlide>
-        <DescriptionSlide animated={true}></DescriptionSlide>
+        <DescriptionSlide
+          key={triggerAnimation}
+          animated={true}
+        ></DescriptionSlide>
         <ProductSlide></ProductSlide>
       </div>
     </div>
