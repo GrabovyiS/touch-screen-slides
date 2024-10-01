@@ -16,11 +16,11 @@ function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
     mainSlider.style.transform = `translateX(${-currentSlideIndex * 100}vw)`;
   }, [currentSlideIndex]);
 
-  const handleTouchStart = (e) => {
+  const onTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].pageX);
   };
 
-  const handleTouchEnd = (e) => {
+  const onTouchEnd = (e) => {
     const touchEnd = e.changedTouches[0].clientX;
 
     if (Math.abs(touchEnd - touchStart) > 100) {
@@ -42,8 +42,8 @@ function MainSlider({ currentSlideIndex, setCurrentSlideIndex }) {
 
   return (
     <div
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       className="main-slider-window"
     >
       <div style={{ width: widthVW + "vw" }} className="main-slider">
