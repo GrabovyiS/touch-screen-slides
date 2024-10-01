@@ -1,0 +1,125 @@
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+
+  display: flex;
+  align-items: end;
+  justify-content: end;
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 72px;
+  background-color: rgba(3, 3, 55, 0.712);
+}
+
+.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-container {
+  position: relative;
+  bottom: 48px;
+  left: 12px;
+  padding: 32px;
+  padding-left: 0;
+  padding-right: 136px;
+  padding-top: 36px;
+  background-color: white;
+  border-radius: 32px;
+
+  .close-popup {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    top: 32px;
+    right: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h2 {
+    margin-left: 230px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .subheading {
+    margin-top: 0;
+    margin-left: 230px;
+  }
+
+  .popup-slider {
+    margin-left: 230px;
+  }
+
+  .popup-slide {
+    font-family: "DINPro-Regular", sans-serif;
+
+    h3 {
+      font-size: 20px;
+      color: #8cc9e8;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      max-width: 40ch;
+    }
+  }
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  gap: 10px;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .slider-dot.current {
+    background-color: #ff6a9f;
+    border-color: #ff6a9f;
+  }
+
+  .left-arrow {
+    height: 24px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .right-arrow {
+    height: 24px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

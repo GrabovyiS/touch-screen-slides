@@ -1,15 +1,4 @@
 .product-slide {
-  --black-background-opacity: 0;
-  .black-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vw;
-    background-color: rgba(0, 0, 0, var(--black-background-opacity));
-  }
-
   background-image: url("../../assets/bg3.png");
   background-size: contain;
   background-position: 0 0;
@@ -27,14 +16,14 @@
   .subheading {
     margin-top: 100px;
     margin-bottom: 20px;
-    margin-left: 352px;
+    margin-left: 328px;
     font-size: 24px;
   }
 
   h2 {
     font-size: 92px;
     line-height: 1;
-    margin-left: 352px;
+    margin-left: 328px;
     text-transform: uppercase;
     margin-bottom: 92px;
     letter-spacing: 8px;
@@ -46,10 +35,9 @@
   .cards {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 80px;
     gap: 32px;
     margin-left: 224px;
-    margin-right: 32px;
   }
 
   .card {
@@ -67,7 +55,7 @@
 
     p {
       font-family: "DINPro-Regular", sans-serif;
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 

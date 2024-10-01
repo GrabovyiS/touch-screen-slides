@@ -6,12 +6,16 @@ import blueSmallBubbleUrl from "../../assets/blue-small.png";
 import blueBigBubbleUrl from "../../assets/blue-big.png";
 import pinkBubbleUrl from "../../assets/pink.png";
 import redBubbleUrl from "../../assets/red.png";
+import Popup from "../Popup/Popup";
 import CTAButton from "../CTAButton/CTAButton";
+import { useState } from "react";
 
 function ProductSlide() {
+  const [popupShown, setPopupShown] = useState(false);
+
   return (
     <div className="slide product-slide">
-      <div className="black-background"></div>
+      <Popup shown={popupShown} setPopupShown={setPopupShown}></Popup>
       <div className="content">
         <p className="subheading">Ключевое сообщение</p>
         <h2>BRENDXY</h2>
@@ -35,7 +39,9 @@ function ProductSlide() {
             </p>
           </div>
           <CTAButton
-            onClick={() => {}}
+            onClick={() => {
+              setPopupShown(true);
+            }}
             type={"plus"}
             text="Подробнее"
           ></CTAButton>
