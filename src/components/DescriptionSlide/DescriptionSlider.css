@@ -68,8 +68,8 @@
       width: calc(100% - 45px);
       height: 50px;
       background: linear-gradient(to top, white, transparent);
-      border-bottom-left-radius: 32px;
-      border-bottom-right-radius: 32px;
+      border-bottom-left-radius: 44px;
+      border-bottom-right-radius: 44px;
     }
   }
 
